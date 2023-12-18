@@ -12,7 +12,7 @@
     <body>
         <div class="container mt-4">
             <a href="/">Home</a>
-            <a href="/articles">Список статей</a>
+            <a href="{{ route('articles.index') }}">Статьи</a>
             <a href="/about">О проекте</a>
         </div>
         <div class="container mt-4">
