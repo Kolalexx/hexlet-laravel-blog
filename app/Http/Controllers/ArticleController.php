@@ -51,9 +51,23 @@ class ArticleController extends Controller
         
         $data = $request->validated();
 
+        $request->session()->flash('errors', 'Article was updated successful!');
+
         $article->fill($data);
         $article->save();
         return redirect()
             ->route('articles.index');
+    }
+
+    public function destroy(Request $request, $id)
+    {
+        $article = Article::find($id);
+        if ($article) {
+            $article->delete();
+        }
+
+        $request->session()->flash('errors', 'Article was deleted successful!');
+
+        return redirect()->route('articles.index');
     }
 }

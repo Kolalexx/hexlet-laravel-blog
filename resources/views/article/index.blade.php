@@ -13,6 +13,7 @@
         </h4>
             <a href="{{ route('articles.edit', $article) }}">Редактировать статью</a>
         </h4>
+        <a href="{{ route('articles.destroy', $article) }}" data-confirm="Вы уверены?" data-method="delete" rel="nofollow">Удалить</a>
     @endforeach
     {{ $articles->links() }}
     <h2>
