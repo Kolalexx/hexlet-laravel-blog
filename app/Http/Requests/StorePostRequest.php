@@ -23,8 +23,8 @@ class StorePostRequest extends FormRequest
      */
     public function rules(): array
     {
-        if ($this->getMethod() === 'PATCH') {
-            $nameRules = 'required|unique:articles,name,' . $this->id;
+        if ($this->getMethod() === 'PATCH' || $this->getMethod() === 'PUT') {
+            $nameRules = 'required|unique:articles,name,' . $this->article->id;
         } else {
             $nameRules = 'required|unique:articles';
         }
