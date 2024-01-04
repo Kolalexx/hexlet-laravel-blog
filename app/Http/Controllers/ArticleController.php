@@ -82,7 +82,6 @@ class ArticleController extends Controller
         $article->delete();
 
         $request->session()->flash('errors', 'Article was deleted successful!');
-
         return redirect()->route('articles.index');
     }
 }
